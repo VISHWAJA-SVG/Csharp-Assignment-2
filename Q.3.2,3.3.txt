@@ -1,0 +1,92 @@
+using System;
+
+namespace CsharpAssignment2.Ass3
+{
+        public class MyStack
+        {
+            int sizeofstack;
+            int top_position = 0;
+            int[] array = new int[20];
+            public void GetSizeOfStack() //for getting size of stack 
+            {
+                Console.WriteLine("Enter Size of Stack");
+                sizeofstack = int.Parse(Console.ReadLine());
+            }
+            public void Push()
+            {
+                if (top_position == (sizeofstack - 1))
+                {
+                    Console.WriteLine("Stack is Full");
+                }
+                else
+                {
+                    for (int i = 0; i < sizeofstack; i++)
+                    {
+                        Console.WriteLine("Insert element in stack");
+                        int element = int.Parse(Console.ReadLine());
+                        array[++top_position] = element;
+                        Console.WriteLine("Item pushed Successfully!");
+                    }
+                }
+            }
+            public object Pop()
+            {
+                if (top_position == -1)
+                {
+                    Console.WriteLine("Stack is Empty");
+                    return "No elements";
+                }
+                else
+                {
+                    return array[top_position--];
+                }
+            }
+            public void Display()
+            {
+                for (int i = top_position; i > 0; i--)
+                {
+                    Console.WriteLine("Item {0}: |{1}| ", (i), array[i]);
+                }
+                Console.ReadLine();
+            }
+        }
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                MyStack stack = new MyStack();
+                //stack.GetSizeOfStack(); 
+                while (true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Stack Menu Program");
+                    Console.WriteLine("1. Enter Size of Stack");
+                    Console.WriteLine("2. Push operation");
+                    Console.WriteLine("3. Pop Operation");
+                    Console.WriteLine("4. Display ");
+                    Console.WriteLine("5. Exit");
+                    Console.Write("Enter Your Choice");
+                    int choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 1:
+                            stack.GetSizeOfStack();
+                            break;
+                        case 2:
+                            stack.Push();
+                            break;
+                        case 3:
+                            Console.WriteLine("Element removed: {0}", stack.Pop());
+                            Console.ReadLine();
+                            break;
+                        case 4:
+                            stack.Display();
+                            break;
+                        case 5:
+                            Environment.Exit(0);
+                            break;
+                    }
+                }
+            }
+        }
+    }

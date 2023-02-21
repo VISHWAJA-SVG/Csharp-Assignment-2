@@ -1,0 +1,55 @@
+using System;
+
+namespace CsharpAssignment2.Ass1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            int num1;
+            int num2;
+            string value;
+            float answer;
+
+            Console.Write("Please enter the first integer: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Please enter an value:\n1 for add\n2for substract\n 3 for multiply\n4 for divide:  ");
+            value = Convert.ToString(Console.ReadLine());
+
+            Console.Write("Please enter the second integer: ");
+            num2 = Convert.ToInt32(Console.ReadLine());
+
+            switch (value)
+            {
+                case "1":
+                    answer = num1 + num2;
+                    break;
+
+                case "2":
+                    answer = num1 - num2;
+                    break;
+
+                case "3":
+                    answer = num1 * num2;
+                    break;
+
+                case "4":
+                    answer = num1 / num2;
+                    break;
+
+
+
+                default:
+                    answer = 0;
+                    break;
+            }
+            Console.WriteLine("Result is " + answer.ToString());
+            Console.ReadLine();
+
+        }
+    }
+
+}

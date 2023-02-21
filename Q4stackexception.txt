@@ -1,0 +1,11 @@
+using System;
+
+namespace CSharpAssignment2.Ass4
+{
+    class StackException : Exception
+    {
+        public StackException(string message) : base(message)
+        {
+        }
+    }
+}

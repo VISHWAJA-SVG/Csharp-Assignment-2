@@ -1,0 +1,40 @@
+using System;
+namespace CsharpAssignment2
+{
+    using System;
+
+    namespace CsharpAssignment
+    {
+        class circleprogram
+        {
+            public static void Main()
+            {
+                //declare and initialize variables
+                decimal pi = 3.14m;
+                int r = 0;
+                decimal area = 0m;
+                decimal circumference = 0m;
+                //input from user
+                Console.WriteLine("Enter radius of circle");
+                r = Convert.ToInt32(Console.ReadLine());
+                area = pi * r * r;//area of circle
+
+                circleprogram.area(area);//method call
+                Console.WriteLine("Enter radius of circle");
+                r = Convert.ToInt32(Console.ReadLine());
+                circumference = 2 * pi * r;//circumference of circle
+                circleprogram.circumference(circumference);//method call
+
+            }
+            public static void area(decimal a)
+            {
+                Console.WriteLine("area of circle = {0}", a);//print area
+            }
+            public static void circumference(decimal c)
+            {
+                Console.WriteLine("circumference of circle = {0}", c);//print circumference
+            }
+        }
+    }
+
+}
